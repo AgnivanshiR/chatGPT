@@ -12,7 +12,9 @@ function getTranslateURL (text) {
 // }
 
 // console.log(getTranslatedURL)
-
+function errorHandler(error){
+  console.log("error occured", error);
+}
 function clickHandler() {
   var inputText = txtInput.value; // taking input
 
@@ -23,6 +25,7 @@ function clickHandler() {
           var translatedText = json.contents.translated;
           output.innerText = translatedText; // output
          })
+      .catch(errorHandler)   
 };
 
 
